@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1428132904 source:c:\users\yorleydemaría\downloads\estructura de datos 2015\pruebagrafica\main.cpp
+1428209153 source:c:\users\yorleydemaría\downloads\estructura de datos 2015\pruebagrafica\main.cpp
 	<iostream>
 	<winbgim.h>
 	<stdio.h>
 	<stdlib.h>
 	"Movements.h"
 
-1428132790 c:\users\yorleydemaría\downloads\estructura de datos 2015\pruebagrafica\include\movements.h
+1428209335 c:\users\yorleydemaría\downloads\estructura de datos 2015\pruebagrafica\include\movements.h
+	<math.h>
 	<iostream>
 	<winbgim.h>
 	<stdio.h>

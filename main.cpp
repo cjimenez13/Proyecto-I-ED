@@ -30,12 +30,16 @@ int main()
     int distancia1;
     cin>>distancia1;
     hola.moveForward(distancia1);
-    hola.moveLeft(45);
-    hola.moveForward(distancia1);
-//                setcolor(15);
-//                line(x,y,x+1,y+1);
+//    hola.moveLeft(45);
+//    hola.moveForward(distancia1);
+               // setcolor(15);
+//cout<<"soy x: "<<getx();
+//cout<<"soy y: "<<gety();
+//                line(30,30,80,80);
+//cout<<"soy x: "<<getx();
+//cout<<"soy y: "<<gety();
 //                outtext("HOLA");
-//                moverel(300, 200);
+
 //                outtext(".....HOLA");
 //                setlinestyle(1, 0, 1);
 //                line(0, 0, 200, 300);
@@ -47,7 +51,7 @@ int main()
     //fillellipse (100,200,100,100);
     int *punteros;
     //fillpoly (4,punteros);
-    floodfill (400,400,10);
+    //floodfill (400,400,10);
 
     getch();
 
