@@ -17,7 +17,7 @@ class Movements
     public:
         Movements() {
             initwindow (900,700);
-            grades=135;
+            grades=300;
             moveto (x,y);
         }
         ~Movements() {}
@@ -26,11 +26,11 @@ class Movements
             getch();
             closegraph();
         }
-        int seno(int alpha, int distance){
-            return (int)(distance * sin(alpha*PI/180));
+        int seno(int pAlpha, int pDistance){
+            return (int)(pDistance * sin(pAlpha*PI/180));
         }
-        int coseno(int alpha, int distance){
-            return (int)(distance * cos(alpha*PI/180));
+        int coseno(int pAlpha, int pDistance){
+            return (int)(pDistance * cos(pAlpha*PI/180));
         }
 
         void moveForward(int pDistance){
@@ -108,85 +108,20 @@ class Movements
                 }
             }
 
-            Delete();
+            //Delete();
         }
 void moveBack(int pDistance){
-            int x=getx();
-            cout<<"este x:"<<x;
-            int y=gety();
-            cout<<"  este y:"<<y;
-
             int color= getcolor();
             if (grades>=360){
                 grades=grades%360;
             }
-            switch(grades){
-            case 0:
-                {
-                    x-=pDistance;
-                    if (pencilDown==true){
-                        line(getx(),gety(),x,y);
-                    }
-                    moveto(x,y);
-                }break;
-            case 90:
-                {
-                    y+=pDistance;
-                    if (pencilDown==true){
-                        line(getx(),gety(),x,y);
-                    }
-                    moveto(x,y);
-                }break;
-            case 180:
-                {
-                    x+=pDistance;
-                    if (pencilDown==true){
-                        line(getx(),gety(),x,y);
-                    }
-                    moveto(x,y);
-                }break;
-            case 270:
-                {
-                    y-=pDistance;
-                    if (pencilDown==true){
-                        line(getx(),gety(),x,y);
-                    }
-                    moveto(x,y);
-                }break;
-            default:
-                {
-                if (grades>0&&grades<90){
-                    int xNext= coseno(grades,pDistance);
-                    int yNext= seno(grades,pDistance);
-                    x-=(xNext);
-                    y+=(yNext);
-                    }
-
-                if (grades>90&&grades<180){
-                    int xNext= coseno(grades-90,pDistance);
-                    int yNext= seno(grades-90,pDistance);
-                    x+=(xNext);
-                    y+=(yNext);
-                    }
-                if (grades>180&&grades<270){
-                    int xNext= coseno(grades-180,pDistance);
-                    int yNext= seno(grades-180,pDistance);
-                    x+=(xNext);
-                    y-=(yNext);
-                    }
-                if (grades>270&&grades<360){
-                    int xNext= coseno(grades-270,pDistance);
-                    int yNext= seno(grades-270,pDistance);
-                    x-=(xNext);
-                    y-=(yNext);
-                    }
-                line(getx(),gety(),x,y);
-                moveto(x,y);
-                }
-
-            }
-
-            Delete();
+            int tempGrades = grades;
+            cout << grades << endl;
+            grades += 180;
+            moveForward(pDistance);
+            grades = tempGrades;
+            cout << grades << endl;
+            //Delete();
         }
 
 
@@ -211,6 +146,53 @@ void setPos(int pCoorX,int pCoorY){
             line(getx(),gety(),pCoorX,pCoorY);
         }
         moveto (pCoorX,pCoorY);
+}
+void setHeading(int pGrades){
+    if (pGrades>=360){
+        grades = pGrades%360;
+    }else{
+        grades = pGrades;
+    }
+}
+void analizeInstructions(string pInstruction){
+    bool endWord = false;
+    string instruction;
+    int *parameters= new int[3];
+    int posSpace = pInstruction.find_first_of(' ');
+    if (posSpace != -1){
+        instruction = pInstruction.substr(0,posSpace);
+        String strParameters = pInstruction.substr(posSpace,pInstruction.length());
+        for(int iChar=0; iChar != pInstruction.length(); iChar++){
+
+            int temp=
+            if (strParameters[iChar] == ' '){
+                parameter[0] = (int)(strParameters.substr(0,iChar));
+
+            }
+        }
+    }
+    else{
+        instruction = pInstruction;
+    }
+//    int param1;
+//    int param2;
+//    int posFirstSpace = pInstruction.find_first_of(' ');
+//    cout << posFirstSpace << endl;
+//    if (posSpace != -1){
+//        instruction = pInstruction.substr(0,posFristSpace);
+//        cout << instruction << endl;
+//    }else{
+//        int posSecondSpace = pInstruction.find_last_of(' ');
+//        if (posFirstSpace != posSecondSpace){
+//            param1 = (int)pInstruction.substr(posFirstSpace+1,);
+//        }else{
+//            param2 = (int)pInstruction.substr(posFirstSpace+1,20);
+//        }
+//    }
+
+//    switch(instruction){
+//        case "forward":
+//    }
 }
 
 

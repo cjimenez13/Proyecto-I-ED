@@ -15,8 +15,8 @@ void Menu(){
     cout<<"\n"<<"** Elija una  opcion para iniciar la graficacion    **"<<endl;
     int opcion;
     cin>>opcion;
-
 }
+
 int main()
 {
     Menu();
@@ -27,9 +27,11 @@ int main()
     cin>>distancia;
     Movements hola;
     hola.moveBack(distancia);
-    int distancia1;
-    cin>>distancia1;
-    hola.moveForward(distancia1);
+//    int distancia1;
+//    cin >> distancia1;
+//    hola.setHeading(100);
+//    hola.moveForward(distancia1);
+    hola.analizeInstructions("for 90");
 //    hola.moveLeft(45);
 //    hola.moveForward(distancia1);
                // setcolor(15);
