@@ -158,41 +158,39 @@ void analizeInstructions(string pInstruction){
     bool endWord = false;
     string instruction;
     int *parameters= new int[3];
+    string strParameters;
     int posSpace = pInstruction.find_first_of(' ');
     if (posSpace != -1){
         instruction = pInstruction.substr(0,posSpace);
-        String strParameters = pInstruction.substr(posSpace,pInstruction.length());
-        for(int iChar=0; iChar != pInstruction.length(); iChar++){
+        strParameters = pInstruction.substr(posSpace+1,pInstruction.length());
 
-            int temp=
-            if (strParameters[iChar] == ' '){
-                parameter[0] = (int)(strParameters.substr(0,iChar));
-
+        //for(int iChar=0; iChar !=3; iChar++)
+        int iChar=0;
+        while(iChar!=3){
+                cout<<strParameters.length()<<endl;
+            if(strParameters.length()==0){
+                break;
+            }else {
+                int posSpace2 = strParameters.find_first_of(' ');
+                if (posSpace != -1){
+                    parameters[iChar]=atoi(strParameters.substr(0,posSpace2).c_str());
+                    strParameters = strParameters.substr(posSpace2+1,strParameters.length());
+                }else{
+                    parameters[iChar] = atoi(strParameters.substr(0,pInstruction.length()).c_str());
+                    strParameters = strParameters.substr(posSpace2+1,strParameters.length());
+                }
             }
+         iChar++;
         }
+
     }
     else{
         instruction = pInstruction;
+    }for(int i=0; i!=3;i++){
+        cout<< parameters[i]<<" ";
     }
-//    int param1;
-//    int param2;
-//    int posFirstSpace = pInstruction.find_first_of(' ');
-//    cout << posFirstSpace << endl;
-//    if (posSpace != -1){
-//        instruction = pInstruction.substr(0,posFristSpace);
-//        cout << instruction << endl;
-//    }else{
-//        int posSecondSpace = pInstruction.find_last_of(' ');
-//        if (posFirstSpace != posSecondSpace){
-//            param1 = (int)pInstruction.substr(posFirstSpace+1,);
-//        }else{
-//            param2 = (int)pInstruction.substr(posFirstSpace+1,20);
-//        }
-//    }
 
-//    switch(instruction){
-//        case "forward":
-//    }
+
 }
 
 
