@@ -167,17 +167,17 @@ void analizeInstructions(string pInstruction){
         //for(int iChar=0; iChar !=3; iChar++)
         int iChar=0;
         while(iChar!=3){
-                cout<<strParameters.length()<<endl;
+            cout<<strParameters.length()<<endl;
             if(strParameters.length()==0){
-                break;
+                parameters[iChar] = 0;
             }else {
                 int posSpace2 = strParameters.find_first_of(' ');
-                if (posSpace != -1){
+                if (posSpace2 != -1){
                     parameters[iChar]=atoi(strParameters.substr(0,posSpace2).c_str());
                     strParameters = strParameters.substr(posSpace2+1,strParameters.length());
                 }else{
                     parameters[iChar] = atoi(strParameters.substr(0,pInstruction.length()).c_str());
-                    strParameters = strParameters.substr(posSpace2+1,strParameters.length());
+                    strParameters = "";
                 }
             }
          iChar++;

@@ -27,11 +27,17 @@ int main()
     cin>>distancia;
     Movements hola;
     hola.moveBack(distancia);
+        hola.analizeInstructions("for 90");
+
+
+
+
+
+
 //    int distancia1;
 //    cin >> distancia1;
 //    hola.setHeading(100);
 //    hola.moveForward(distancia1);
-    hola.analizeInstructions("for 90");
 //    hola.moveLeft(45);
 //    hola.moveForward(distancia1);
                // setcolor(15);
