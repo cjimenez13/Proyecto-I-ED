@@ -320,6 +320,7 @@ void analizeInstructions(string pInstruction){
     if (posSpace != -1){
         instruction = convertToLowercase(pInstruction.substr(0,posSpace));
 
+<<<<<<< HEAD
         if(instruction.compare("repeat")==0){
             repeatInstruction(pInstruction);
         }
@@ -354,6 +355,22 @@ void analizeInstructions(string pInstruction){
                         }
                     }
                  iChar++;
+=======
+        //for(int iChar=0; iChar !=3; iChar++)
+        int iChar=0;
+        while(iChar!=3){
+            cout<<strParameters.length()<<endl;
+            if(strParameters.length()==0){
+                parameters[iChar] = 0;
+            }else {
+                int posSpace2 = strParameters.find_first_of(' ');
+                if (posSpace2 != -1){
+                    parameters[iChar]=atoi(strParameters.substr(0,posSpace2).c_str());
+                    strParameters = strParameters.substr(posSpace2+1,strParameters.length());
+                }else{
+                    parameters[iChar] = atoi(strParameters.substr(0,pInstruction.length()).c_str());
+                    strParameters = "";
+>>>>>>> 62187e854d5273de3b5e7b3bc4f6270c704b4829
                 }
             }
         }
