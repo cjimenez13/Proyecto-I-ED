@@ -27,15 +27,17 @@
 	<stdio.h>
 	<stdlib.h>
 
-1428418606 source:c:\users\yorleydemaría\downloads\estructura de datos 2015\progra 1\progra\main.cpp
+1428779890 source:c:\users\yorleydemaría\downloads\estructura de datos 2015\progra 1\progra\main.cpp
 	<iostream>
 	<winbgim.h>
 	<stdio.h>
+	<string.h>
 	<stdlib.h>
 	"Movements.h"
 
-1428422730 c:\users\yorleydemaría\downloads\estructura de datos 2015\progra 1\progra\include\movements.h
+1428779965 c:\users\yorleydemaría\downloads\estructura de datos 2015\progra 1\progra\include\movements.h
 	<math.h>
+	<ctype.h>
 	<iostream>
 	<winbgim.h>
 	<stdio.h>

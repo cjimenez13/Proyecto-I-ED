@@ -1,6 +1,7 @@
 #include <iostream>
 # include <winbgim.h>
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include "Movements.h"
 using namespace std;
@@ -19,21 +20,33 @@ void Menu(){
 
 int main()
 {
+
     Menu();
-
-
-    cout<<"diga la distancia"<<endl;
-    int distancia;
-    cin>>distancia;
+    cout<<"diga la instruccion"<<endl;
+    string distancia;
+    cin.ignore();
+    getline(cin,distancia);
+    cout<<distancia;
     Movements hola;
-    hola.moveBack(distancia);
+    //hola.seTColor());
 //    int distancia1;
 //    cin >> distancia1;
 //    hola.setHeading(100);
-//    hola.moveForward(distancia1);
-    hola.analizeInstructions("for 90");
+    hola.pen();
+    hola.Pos();
+    hola.moveForward(100);
+    hola.Pos();
+    hola.analizeInstructions(distancia);
+    hola.moveLeft(45);
+    hola.Pos();
+    hola.moveForward(100);
+    hola.Pos();
+    hola.pen();
+    hola.write(5,"TE AMO CHRISTIAN");
+    hola.seTColor(3);
+    hola.moveForward(100);
 //    hola.moveLeft(45);
-//    hola.moveForward(distancia1);
+//       hola.moveForward(distancia);
                // setcolor(15);
 //cout<<"soy x: "<<getx();
 //cout<<"soy y: "<<gety();
@@ -50,11 +63,11 @@ int main()
     //bar3d (20, 100, 300, 90, 20, 20);
     //circle (150,150, 150);
     //ellipse (100, 100, 100, 100, 100,100);
-    //fillellipse (100,200,100,100);
-    int *punteros;
-    //fillpoly (4,punteros);
-    //floodfill (400,400,10);
-
+//    //fillellipse (100,200,100,100);
+//    int *punteros;
+//    //fillpoly (4,punteros);
+//    //floodfill (400,400,10);
+//
     getch();
 
 
