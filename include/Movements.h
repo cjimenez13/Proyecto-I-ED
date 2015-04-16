@@ -294,21 +294,24 @@ void repeatInstruction(string pInstruction){
     cout<<"SOY REPEAT"<<endl;
 }
 void Turtle(){
-    //line(getx(),gety(),getx()-30,gety()+10);
-   int maxx = coorX;
-   int  maxy = coorY;
-   int poly[10];   /* our polygon array */
-   poly[0] = 20;           /* first vertex */
-   poly[1] = maxy / 2;
-   poly[2] = maxx - 20;    /* second vertex */
-   poly[3] = 20;
-   poly[4] = maxx - 50;    /* third vertex */
-   poly[5] = maxy - 20;
-   poly[6] = maxx / 2;     /* fourth vertex */
-   poly[7] = maxy / 2;
-   poly[8] = poly[0];      /* drawpoly doesn't automatically close */
-   poly[9] = poly[1];      /* the polygon, so we close it */
-   drawpoly(5, poly);   /* draw the polygon */
+   int xPoint = coorX;
+   int yPoint = coorY;
+   int gradesToMove= grades;
+   int xNextP=xPoint+coseno(gradesToMove,40);
+   int yNextP=yPoint+seno(gradesToMove,40);
+   int poly[6];   /* our polygon array */
+   poly[0] = xNextP;           /* first vertex */
+   poly[1] = yNextP;
+    xNextP=xPoint+coseno(gradesToMove+90,10);
+    yNextP=yPoint+seno(gradesToMove+90,10);
+   poly[2] =xNextP;    /* second vertex */
+   poly[3] = yNextP;
+    xNextP=xPoint+coseno(gradesToMove-90,10);
+    yNextP=yPoint+seno(gradesToMove-90,10);
+   poly[4] =xNextP;    /* third vertex */
+   poly[5] = yNextP;
+
+   fillpoly(3, poly);   /* draw the polygon */
 }
 
 void analizeInstructions(string pInstruction){
@@ -316,61 +319,46 @@ void analizeInstructions(string pInstruction){
     string instruction;
     int *parameters= new int[3];
     string strParameters;
-    int posSpace = pInstruction.find_first_of(' ');
+    int posSpace = pInstruction.find_first_of(" ");
     if (posSpace != -1){
         instruction = convertToLowercase(pInstruction.substr(0,posSpace));
 
-<<<<<<< HEAD
         if(instruction.compare("repeat")==0){
             repeatInstruction(pInstruction);
-        }
-        if(instruction.compare("loadfile")==0){
-            strParameters = pInstruction.substr(posSpace+1,pInstruction.length());
-        }
-        if(instruction.compare("write")==0){
-            strParameters = pInstruction.substr(posSpace+1,pInstruction.length());
-            int posSpace1 = strParameters.find_first_of(' ');
-            parameters[0]=atoi(strParameters.substr(0,posSpace1).c_str());
-            strParameters=pInstruction.substr(posSpace1+1,pInstruction.length());
-        }
-        else{
-            strParameters = pInstruction.substr(posSpace+1,pInstruction.length());
-            const char * c = strParameters.c_str();
-            if(isalpha(c[0])){
-                  strParameters = convertToLowercase(strParameters);
-            }else{
-                int iChar=0;
-                while(iChar!=3){
-                    if(strParameters.length()==0){
-                       parameters[iChar]=0;
+        }else{
+            if(instruction.compare("loadfile")==0){
+                strParameters = pInstruction.substr(posSpace+1,pInstruction.length());
+            }else {
+                if(instruction.compare("write")==0){
+                    strParameters = pInstruction.substr(posSpace+1,pInstruction.length());
+                    int posSpace1 = strParameters.find_first_of(" ");
+                    parameters[0]=atoi(strParameters.substr(0,posSpace1).c_str());
+                    strParameters=strParameters.substr(posSpace1+1,pInstruction.length());
+                }
+                else{
+                    strParameters = pInstruction.substr(posSpace+1,pInstruction.length());
+                    const char * c = strParameters.c_str();
+                    if(isalpha(c[0])){
+                          strParameters = convertToLowercase(strParameters);
+                    }else{
+                        int iChar=0;
+                        while(iChar!=3){
+                            if(strParameters.length()==0){
+                               parameters[iChar]=0;
 
-                    }else {
-                        int posSpace2 = strParameters.find_first_of(' ');
-                        if (posSpace2 != -1){
-                            parameters[iChar]=atoi(strParameters.substr(0,posSpace2).c_str());
-                            strParameters = strParameters.substr(posSpace2+1,strParameters.length());
-                        }else{
-                            parameters[iChar] = atoi(strParameters.substr(0,pInstruction.length()).c_str());
-                            strParameters ="";
+                            }else {
+                                int posSpace2 = strParameters.find_first_of(' ');
+                                if (posSpace2 != -1){
+                                    parameters[iChar]=atoi(strParameters.substr(0,posSpace2).c_str());
+                                    strParameters = strParameters.substr(posSpace2+1,strParameters.length());
+                                }else{
+                                    parameters[iChar] = atoi(strParameters.substr(0,pInstruction.length()).c_str());
+                                    strParameters ="";
+                                }
+                            }
+                         iChar++;
                         }
                     }
-                 iChar++;
-=======
-        //for(int iChar=0; iChar !=3; iChar++)
-        int iChar=0;
-        while(iChar!=3){
-            cout<<strParameters.length()<<endl;
-            if(strParameters.length()==0){
-                parameters[iChar] = 0;
-            }else {
-                int posSpace2 = strParameters.find_first_of(' ');
-                if (posSpace2 != -1){
-                    parameters[iChar]=atoi(strParameters.substr(0,posSpace2).c_str());
-                    strParameters = strParameters.substr(posSpace2+1,strParameters.length());
-                }else{
-                    parameters[iChar] = atoi(strParameters.substr(0,pInstruction.length()).c_str());
-                    strParameters = "";
->>>>>>> 62187e854d5273de3b5e7b3bc4f6270c704b4829
                 }
             }
         }
@@ -467,7 +455,7 @@ void executeInstruction(string pInstruction,int* Parameters,string pParameter){
         _clear();
     }
     if (Instruction.compare("write")==0){
-        //write() "completar"
+        write(Parameters[0],pParameter);
     }
 //    else if
 

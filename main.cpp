@@ -28,38 +28,25 @@ int main()
     getline(cin,distancia);
     cout<<distancia;
     Movements hola;
-<<<<<<< HEAD
     //hola.seTColor());
 //    int distancia1;
 //    cin >> distancia1;
 //    hola.setHeading(100);
-    hola.pen();
-    hola.Pos();
+   // hola.Turtle();
+//    hola.Pos();
     hola.moveForward(100);
-    hola.Pos();
+//    hola.Pos();
     hola.analizeInstructions(distancia);
-    hola.moveLeft(45);
-    hola.Pos();
+   // hola.moveLeft(45);
+   // hola.Turtle();
+
+//    hola.Pos();
+
+//    hola.Pos();
+//    hola.pen();
+//    hola.write(5,"TE AMO CHRISTIAN");
+//    hola.seTColor(3);
     hola.moveForward(100);
-    hola.Pos();
-    hola.pen();
-    hola.write(5,"TE AMO CHRISTIAN");
-    hola.seTColor(3);
-    hola.moveForward(100);
-=======
-    hola.moveBack(distancia);
-        hola.analizeInstructions("for 90");
-
-
-
-
-
-
-//    int distancia1;
-//    cin >> distancia1;
-//    hola.setHeading(100);
-//    hola.moveForward(distancia1);
->>>>>>> 62187e854d5273de3b5e7b3bc4f6270c704b4829
 //    hola.moveLeft(45);
 //       hola.moveForward(distancia);
                // setcolor(15);

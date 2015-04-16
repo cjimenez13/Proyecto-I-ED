@@ -1,33 +1,5 @@
 # depslib dependency file v1.0
-1428209153 source:c:\users\yorleydemaría\downloads\estructura de datos 2015\pruebagrafica\main.cpp
-	<iostream>
-	<winbgim.h>
-	<stdio.h>
-	<stdlib.h>
-	"Movements.h"
-
-1428209335 c:\users\yorleydemaría\downloads\estructura de datos 2015\pruebagrafica\include\movements.h
-	<math.h>
-	<iostream>
-	<winbgim.h>
-	<stdio.h>
-	<stdlib.h>
-
-1428423849 source:c:\users\christian\onedrive\documents\ing en sistemas\amor\turtle graphics\main.cpp
-	<iostream>
-	<winbgim.h>
-	<stdio.h>
-	<stdlib.h>
-	"Movements.h"
-
-1428424126 c:\users\christian\onedrive\documents\ing en sistemas\amor\turtle graphics\include\movements.h
-	<math.h>
-	<iostream>
-	<winbgim.h>
-	<stdio.h>
-	<stdlib.h>
-
-1428779890 source:c:\users\yorleydemaría\downloads\estructura de datos 2015\progra 1\progra\main.cpp
+1429171889 source:c:\users\yorleydemaría\downloads\estructura de datos 2015\progra 1\progra\main.cpp
 	<iostream>
 	<winbgim.h>
 	<stdio.h>
@@ -35,7 +7,7 @@
 	<stdlib.h>
 	"Movements.h"
 
-1428779965 c:\users\yorleydemaría\downloads\estructura de datos 2015\progra 1\progra\include\movements.h
+1429173579 c:\users\yorleydemaría\downloads\estructura de datos 2015\progra 1\progra\include\movements.h
 	<math.h>
 	<ctype.h>
 	<iostream>
