@@ -327,6 +327,23 @@ bool readFile(const char* pFile){
         return false;
     }
 }
+bool writeFile(const char* pFilePath){
+    ofstream myfile (pFilePath);
+    if (myfile.is_open())
+    {
+        for (int iLine = 0; iLine != fileInstruction.getSize(); iLine++){
+            fileInstruction.goToPos(iLine);
+            myfile << fileInstruction.getElement();
+            myfile << "\n";
+        }
+    myfile.close();
+    fileInstruction.goToStart();
+    return true;
+    }else {
+        cout << "Unable to open file";
+        return false;
+    }
+}
 
 
 void Turtle(){

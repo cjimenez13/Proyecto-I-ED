@@ -21,3 +21,26 @@
 	<stdlib.h>
 	<stdexcept>
 
+1429587876 source:c:\users\christian\onedrive\documents\ing en sistemas\amor\turtle graphics\main.cpp
+	<iostream>
+	<winbgim.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"Movements.h"
+
+1429587971 c:\users\christian\onedrive\documents\ing en sistemas\amor\turtle graphics\include\movements.h
+	<math.h>
+	<ctype.h>
+	<iostream>
+	<fstream>
+	<winbgim.h>
+	<stdio.h>
+	<stdlib.h>
+	"array.h"
+
+1429587525 c:\users\christian\onedrive\documents\ing en sistemas\amor\turtle graphics\include\array.h
+	<stdio.h>
+	<stdlib.h>
+	<stdexcept>
+

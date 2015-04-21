@@ -23,19 +23,7 @@ void Menu(){
 
 
 
-bool writeFile(const char* pFilePath){
-    ofstream myfile ("example.txt");
-    if (myfile.is_open())
-    {
-    myfile << "This is a line.\n";
-    myfile << "This is another line.\n";
-    myfile.close();
-    return true;
-    }else {
-        cout << "Unable to open file";
-        return false;
-    }
-}
+
 
 ////    Menu();
 ////    cout<<"diga la instruccion"<<endl;
@@ -44,10 +32,12 @@ bool writeFile(const char* pFilePath){
 ////    getline(cin,distancia);
 ////    cout<<distancia;
 //
-//int main () {
-    Movements hola();
-    //hola.readFile("example.txt");
-hola.seTColor();
+int main () {
+    Movements hola;
+    hola.readFile("example1.txt");
+    hola.writeFile("example1.txt");
+//hola.seTColor();
+
 ////    int distancia1;
 ////    cin >> distancia1;
 ////    hola.setHeading(100);
