@@ -39,6 +39,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Movements.h" />
+		<Unit filename="include/array.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

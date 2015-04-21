@@ -4,9 +4,11 @@
 #include <math.h>
 #include <ctype.h>
 #include <iostream>
+#include <fstream>
 # include <winbgim.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "array.h"
 using namespace std;
 class Movements
 {
@@ -18,6 +20,8 @@ class Movements
         int grades;
         int coorX=450;
         int coorY=350;
+        ArrayList <string> history;
+        ArrayList <string> fileInstruction;
     public:
         Movements() {
             initwindow (900,700);
@@ -237,6 +241,14 @@ void write(int pSizeText,string pText){
     settextstyle(0,0,pSizeText);
     outtextxy (coorX,coorY,text);
 }
+void historyI(){
+    history.printE();
+}
+void clearHistory(){
+    history.Clear();
+    cout <<"El historial ha sido borrado correctamente"<<endl;
+}
+
 int colorConversor(string pColor){
     if (pColor.compare("black")==0){
         return 0;
@@ -290,9 +302,33 @@ int colorConversor(string pColor){
         return 16;
     }
 }
-void repeatInstruction(string pInstruction){
-    cout<<"SOY REPEAT"<<endl;
+void repeatInstruction(int pCantRepeat,string pInstructions){
+    cout<< pInstructions;
+
+
+
+
 }
+
+
+bool readFile(const char* pFile){
+    cout<<"entro"<<endl;
+    string line;
+    ifstream myfile (pFile);
+    if (myfile.is_open()){
+        while(getline (myfile,line)){
+            fileInstruction.append(line);
+        }
+    myfile.close();
+    fileInstruction.printE();
+    return true;
+    }else {
+        cout << "Unable to open file";
+        return false;
+    }
+}
+
+
 void Turtle(){
    int xPoint = coorX;
    int yPoint = coorY;
@@ -315,6 +351,8 @@ void Turtle(){
 }
 
 void analizeInstructions(string pInstruction){
+    pInstruction=convertToLowercase(pInstruction);
+    history.append(pInstruction);
     bool endWord = false;
     string instruction;
     int *parameters= new int[3];
@@ -324,7 +362,10 @@ void analizeInstructions(string pInstruction){
         instruction = convertToLowercase(pInstruction.substr(0,posSpace));
 
         if(instruction.compare("repeat")==0){
-            repeatInstruction(pInstruction);
+                    strParameters = pInstruction.substr(posSpace+1,pInstruction.length());
+                    int posSpace1 = strParameters.find_first_of(" ");
+                    parameters[0]=atoi(strParameters.substr(0,posSpace1).c_str());
+                    strParameters=strParameters.substr(posSpace1+1,pInstruction.length());
         }else{
             if(instruction.compare("loadfile")==0){
                 strParameters = pInstruction.substr(posSpace+1,pInstruction.length());
@@ -382,6 +423,8 @@ void executeInstruction(string pInstruction,int* Parameters,string pParameter){
     string Instruction= convertToLowercase(pInstruction);
     if (Instruction.compare("forward")==0){
         moveForward(Parameters[0]);
+
+
     }
     if (Instruction.compare("back")==0){
         moveBack(Parameters[0]);
@@ -456,6 +499,9 @@ void executeInstruction(string pInstruction,int* Parameters,string pParameter){
     }
     if (Instruction.compare("write")==0){
         write(Parameters[0],pParameter);
+    }
+    if (Instruction.compare("repeat")==0){
+        repeatInstruction(Parameters[0],pParameter);
     }
 //    else if
 

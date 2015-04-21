@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1429171889 source:c:\users\yorleydemaría\downloads\estructura de datos 2015\progra 1\progra\main.cpp
+1429172460 source:c:\users\yorleydemaría\downloads\estructura de datos 2015\progra 1\progra\main.cpp
 	<iostream>
 	<winbgim.h>
 	<stdio.h>
@@ -7,11 +7,17 @@
 	<stdlib.h>
 	"Movements.h"
 
-1429173579 c:\users\yorleydemaría\downloads\estructura de datos 2015\progra 1\progra\include\movements.h
+1429170669 c:\users\yorleydemaría\downloads\estructura de datos 2015\progra 1\progra\include\movements.h
 	<math.h>
 	<ctype.h>
 	<iostream>
 	<winbgim.h>
 	<stdio.h>
 	<stdlib.h>
+	"array.h"
+
+1429222399 c:\users\yorleydemaría\downloads\estructura de datos 2015\progra 1\progra\include\array.h
+	<stdio.h>
+	<stdlib.h>
+	<stdexcept>
 

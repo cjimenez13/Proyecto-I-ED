@@ -18,36 +18,56 @@ void Menu(){
     cin>>opcion;
 }
 
-int main()
-{
 
-    Menu();
-    cout<<"diga la instruccion"<<endl;
-    string distancia;
-    cin.ignore();
-    getline(cin,distancia);
-    cout<<distancia;
-    Movements hola;
-    //hola.seTColor());
-//    int distancia1;
-//    cin >> distancia1;
-//    hola.setHeading(100);
-   // hola.Turtle();
-//    hola.Pos();
-    hola.moveForward(100);
-//    hola.Pos();
-    hola.analizeInstructions(distancia);
-   // hola.moveLeft(45);
-   // hola.Turtle();
 
-//    hola.Pos();
 
-//    hola.Pos();
-//    hola.pen();
-//    hola.write(5,"TE AMO CHRISTIAN");
-//    hola.seTColor(3);
-    hola.moveForward(100);
-//    hola.moveLeft(45);
+
+
+bool writeFile(const char* pFilePath){
+    ofstream myfile ("example.txt");
+    if (myfile.is_open())
+    {
+    myfile << "This is a line.\n";
+    myfile << "This is another line.\n";
+    myfile.close();
+    return true;
+    }else {
+        cout << "Unable to open file";
+        return false;
+    }
+}
+
+////    Menu();
+////    cout<<"diga la instruccion"<<endl;
+////    string distancia;
+////    cin.ignore();
+////    getline(cin,distancia);
+////    cout<<distancia;
+//
+//int main () {
+    Movements hola();
+    //hola.readFile("example.txt");
+hola.seTColor();
+////    int distancia1;
+////    cin >> distancia1;
+////    hola.setHeading(100);
+//   // hola.Turtle();
+////    hola.Pos();
+//    hola.moveForward(100);
+////    hola.Pos();
+//hola.historyI();
+//    hola.analizeInstructions(distancia);
+//   // hola.moveLeft(45);
+//   // hola.Turtle();
+//
+////    hola.Pos();
+//
+////    hola.Pos();
+////    hola.pen();
+////    hola.write(5,"TE AMO CHRISTIAN");
+////    hola.seTColor(3);
+//    hola.moveForward(100);
+////    hola.moveLeft(45);
 //       hola.moveForward(distancia);
                // setcolor(15);
 //cout<<"soy x: "<<getx();
