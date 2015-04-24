@@ -1,2 +1,7 @@
-This is a line.
-This is another line.
+forward 100
+color red
+left 45
+back 70
+right 90
+color yellow
+forward 100

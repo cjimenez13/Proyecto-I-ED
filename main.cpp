@@ -5,50 +5,43 @@
 #include <stdlib.h>
 #include "Movements.h"
 using namespace std;
+void menuAux(Movements turtle){
+    turtle.MenuInstructions();
+    //turtle.refreshTurtle();
+    //menuAux(turtle);
+}
 void Menu(){
     cout<<"******************************************************"<<endl;
     cout<<"**                      Bienvenido                  **"<<endl;
     cout<<"******************************************************"<<endl;
     cout<<"**     Este programa es un graficador de figuras    **"<<endl;
     cout<<"******************************************************"<<endl;
-    cout<<"** 1. Interraccion directa con el usuario           **"<<endl;
-    cout<<"** 2. Cargar instrucciones desde un archivo         **"<<endl;
-    cout<<"\n"<<"** Elija una  opcion para iniciar la graficacion    **"<<endl;
-    int opcion;
-    cin>>opcion;
 }
 
-
-
-
-
-
-
-
-////    Menu();
-////    cout<<"diga la instruccion"<<endl;
-////    string distancia;
-////    cin.ignore();
-////    getline(cin,distancia);
-////    cout<<distancia;
-//
 int main () {
-    Movements hola;
-    hola.readFile("example1.txt");
-    hola.writeFile("example1.txt");
+    Movements turtle;
+    Menu();
+    while(!kbhit()){
+    turtle.MenuInstructions();
+    turtle.refreshTurtle();
+    }
+    //turtle.MenuInstructions();
+//    hola.readFile("example1.txt");
+ //   hola.exec();
+//    hola.writeFile("example1.txt");
 //hola.seTColor();
 
 ////    int distancia1;
 ////    cin >> distancia1;
 ////    hola.setHeading(100);
-//   // hola.Turtle();
-////    hola.Pos();
-//    hola.moveForward(100);
-////    hola.Pos();
-//hola.historyI();
-//    hola.analizeInstructions(distancia);
-//   // hola.moveLeft(45);
-//   // hola.Turtle();
+// hola.Turtle();
+//////    hola.Pos();
+ //  hola.moveForward(100);
+//////    hola.Pos();
+////hola.historyI();
+    //hola.analizeInstructions("write 5 \"hola soy la tortuga\"");
+// hola.moveLeft(45);
+// hola.Turtle();
 //
 ////    hola.Pos();
 //
@@ -56,8 +49,16 @@ int main () {
 ////    hola.pen();
 ////    hola.write(5,"TE AMO CHRISTIAN");
 ////    hola.seTColor(3);
-//    hola.moveForward(100);
-////    hola.moveLeft(45);
+    //hola.analizeInstructions("repeat 3 [color blue forward 100 color yellow left 90 forward 100]");
+
+//    hola.analizeInstructions("left 30");
+    //hola.analizeInstructions("Left 45");
+    //hola.analizeInstructions("forward 100");
+    //hola.refreshTurtle();
+
+////     hola.Turtle();
+//    hola.analizeInstructions("Forward 100");
+//  hola.refreshTurtle();
 //       hola.moveForward(distancia);
                // setcolor(15);
 //cout<<"soy x: "<<getx();
